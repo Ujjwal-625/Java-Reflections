@@ -52,6 +52,19 @@ public class Main {
 
 //        problem 3
 
+        Calculator calculator=new Calculator();
+
+        Method [] methods=calculator.getClass().getDeclaredMethods();
+        for(Method m:methods){
+            m.setAccessible(true);
+            if(m.getParameterCount()==2){
+                Object res=m.invoke(calculator,10,20);
+                if(res instanceof Integer result){
+                    System.out.println(result);
+                }
+            }
+        }
+
 
     }
 }
