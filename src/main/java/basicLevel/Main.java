@@ -51,19 +51,28 @@ public class Main {
 //        }
 
 //        problem 3
+//        Calculator calculator=new Calculator();
+//        Method [] methods=calculator.getClass().getDeclaredMethods();
+//        for(Method m:methods){
+//            m.setAccessible(true);
+//            if(m.getParameterCount()==2){
+//                Object res=m.invoke(calculator,10,20);
+//                if(res instanceof Integer result){
+//                    System.out.println(result);
+//                }
+//            }
+//        }
 
-        Calculator calculator=new Calculator();
+//        problem 4
 
-        Method [] methods=calculator.getClass().getDeclaredMethods();
-        for(Method m:methods){
-            m.setAccessible(true);
-            if(m.getParameterCount()==2){
-                Object res=m.invoke(calculator,10,20);
-                if(res instanceof Integer result){
-                    System.out.println(result);
-                }
-            }
-        }
+        Class c1=basicLevel.Student.class;
+        Constructor constructor=c1.getDeclaredConstructor();
+        Student student= (Student) constructor.newInstance();
+
+        System.out.println(student.age);
+        System.out.println(student.name);
+
+
 
 
     }
