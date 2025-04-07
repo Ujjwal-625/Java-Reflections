@@ -70,6 +70,23 @@ public class Main {
 //        }
 
 
+        //problem 7
+
+        CustomApi api=new CustomApi();
+
+        Class customApi=api.getClass();
+
+        Field api_key=customApi.getDeclaredField("API_KEY");
+
+        api_key.setAccessible(true);
+        System.out.println("Before updating the final variable : api_key : "+api_key.get(api));
+
+        api_key.setAccessible(true);
+        api_key.set(api,"updated the api key");
+
+        System.out.println("After updating the final variable : api_key : "+api_key.get(api));
+
+
     }
 
 }
