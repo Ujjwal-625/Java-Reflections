@@ -1,29 +1,18 @@
 package intermediateLevel;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Scanner;
 
+import static javax.management.Query.value;
+
+@Author(name="ABC name")
 class CheckFieldAnnotation{
-    @FieldAnnotation
-    int value;
 
-    int valueWithoutAnnotaion;
-    CheckFieldAnnotation(int value,int valueWithoutAnnotaion){
-        this.value=value;
-        this.valueWithoutAnnotaion=valueWithoutAnnotaion;
-    }
-
-    int getValue(){
-        return value;
-    }
 }
 
 public class Main {
     public static void main(String[] args) throws Exception{
         //problem 5
 //        MathOperation mathOperation=new MathOperation();
-//
 //        Scanner sc=new Scanner(System.in);
 //        System.out.print("Enter a :");
 //        int a=sc.nextInt();
@@ -77,20 +66,12 @@ public class Main {
 
 
         //problem 6
-
-        CheckFieldAnnotation checkFieldAnnotation=new CheckFieldAnnotation(10,20);
-
-        Field [] fields=checkFieldAnnotation.getClass().getDeclaredFields();
-
-        for(Field f:fields){
-            if(f.isAnnotationPresent(FieldAnnotation.class)){
-                System.out.println("Annotation is present in "+f.getName());
-            }
-            else{
-                System.out.println("Annotation is not present in "+f.getName());
-
-            }
-        }
+//        CheckFieldAnnotation checkFieldAnnotation=new CheckFieldAnnotation();
+//
+//        if(checkFieldAnnotation.getClass().isAnnotationPresent(Author.class)){
+//            Author author=checkFieldAnnotation.getClass().getAnnotation(Author.class);
+//            System.out.println("Name of the Author is : "+author.name());
+//        }
 
 
     }
