@@ -4,10 +4,6 @@ import java.lang.reflect.Field;
 
 import static javax.management.Query.value;
 
-@Author(name="ABC name")
-class CheckFieldAnnotation{
-
-}
 
 public class Main {
     public static void main(String[] args) throws Exception{
